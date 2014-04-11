@@ -62,7 +62,7 @@
 	-moz-border-radius: 0px 0px 5px 5px;
 	-webkit-border-radius: 5px 0px 0px 0px;
 	background-color: #20201f;
-	background-image: url(#{resource['ligues:/img/puclicidad/futbol-menor-publicidad.png']});/*url(../img/publicidad/futbol-menor-publicidad.png);*/
+	background-image: url("#{resource['ligues:/img/puclicidad/futbol-menor-publicidad.png']}");/*url(../img/publicidad/futbol-menor-publicidad.png);*/
 }
 
 #top .box a{
@@ -142,7 +142,7 @@ div#wrapper{
 	position: relative;
 	width: 1020px;
 	margin: 0 auto;
-	background-image: url(#{resource['ligues:img/others/bg-home.png']});/*url(../img/others/bg-home.png);*/
+	background-image: url("#{resource['ligues:img/others/bg-home.png']}");/*url(../img/others/bg-home.png);*/
 	background-repeat: no-repeat;
 }
 
@@ -182,7 +182,7 @@ img#logo{
 	float: right;
 	width: 300px;
 	padding-left: 10px;
-	background-image: url(#{resource['ligues:img/publicidad/bg_publicidad.png']}); /*url(../img/publicidad/bg_publicidad.png)*/
+	background-image: url("#{resource['ligues:img/publicidad/bg_publicidad.png']}"); /*url(../img/publicidad/bg_publicidad.png)*/
 }
 
 
@@ -232,7 +232,7 @@ div.headline{
 	color: #665d4e;
 	height: 90px;
 	width: 1020px;
-	background: url(#{resource['ligues:img/title-bg.png']}) no-repeat; /* url(../img/title-bg.png) */
+	background: url("#{resource['ligues:img/title-bg.png']}") no-repeat; /* url(../img/title-bg.png) */
 	color: #12262d;
 	margin-top: 0;
 	margin-right: auto;
@@ -368,7 +368,7 @@ img.border{
 .shadow-img{
 	display: block;
 	padding-bottom: 22px;
-	background: url(#{resource['ligues:/img/thumb-shadow.png']}) no-repeat bottom center ; /*url(../img/thumb-shadow.png)*/
+	background: url("#{resource['ligues:/img/thumb-shadow.png']}") no-repeat bottom center ; /*url(../img/thumb-shadow.png)*/
 }
 
 .dropcap {
@@ -501,7 +501,7 @@ td, th{
 	padding-right: 0;
 	padding-bottom: 20px;
 	padding-left: 0;
-	background-image: url(#{resource['ligues:img/bg_menu.png']});/*url(../img/bg_menu.png)*/
+	background-image: url("#{resource['ligues:img/bg_menu.png']}");/*url(../img/bg_menu.png)*/
 	background-repeat: repeat-x;
 }
 
@@ -554,7 +554,7 @@ td, th{
 	top: 2em;
 	right: auto;
 	width: 18em;
-	background-image: url(#{resource['ligues:img/drop-top2.png']}); /*url(../img/drop-top2.png)*/
+	background-image: url("#{resource['ligues:img/drop-top2.png']}"); /*url(../img/drop-top2.png)*/
 	background-repeat: no-repeat;
 	background-position: left top;
 }
@@ -591,7 +591,7 @@ td, th{
 #centeredmenu ul li:last-child ul {
 	left: auto; /* reset left:0; value */
 	right: 0; /* Set right value instead */
-	background: url(#{resource['ligues:img/drop-top-right2.png']}) no-repeat top center; /* url(../img/drop-top-right2.png)*/
+	background: url("#{resource['ligues:img/drop-top-right2.png']}") no-repeat top center; /* url(../img/drop-top-right2.png)*/
 }
 
 /* Make the sub menus appear on hover */
@@ -617,7 +617,7 @@ form#searchform input#s{
 	margin: 10px 0px 5px 0px;
 	padding: 0px 30px 0px 5px;
 	border: 0;
-	background: url(#{resource['ligues:img/search-input.png']}) no-repeat transparent; /* url(../img/search-input.png) */
+	background: url("#{resource['ligues:img/search-input.png']}") no-repeat transparent; /* url(../img/search-input.png) */
 }
 
 
@@ -628,7 +628,7 @@ form#searchform input#searchsubmit{
 	width: 41px;
 	height: 30px;
 	border: 0px;
-	background: url(#{resource['ligues:img/go-button.png']}) no-repeat  transparent; /* url(../img/go-button.png) */
+	background: url("#{resource['ligues:img/go-button.png']}") no-repeat  transparent; /* url(../img/go-button.png) */
 }
 
 form#searchform input#searchsubmit:hover{
@@ -666,7 +666,7 @@ form#searchform input#searchsubmit:hover{
 }
 
 .blocks-holder li .thumb-holder{
-	background: url(#{resurce['ligues:img/thumb-shadow.png']}) no-repeat 0px 179px ; /* url(../img/thumb-shadow.png) */
+	background: url("#{resurce['ligues:img/thumb-shadow.png']}") no-repeat 0px 179px ; /* url(../img/thumb-shadow.png) */
 }
 
 .blocks-holder .block-title{
@@ -773,7 +773,7 @@ div#slideshow span{
 	left: 0px;
 	z-index: 10;
 	cursor: pointer;
-	background-image: url(#{resource['ligues:img/pantalla.png']});/* url(../img/pantalla.png) */
+	background-image: url("#{resource['ligues:img/pantalla.png']}");/* url(../img/pantalla.png) */
 	background-repeat: no-repeat;
         
 }
@@ -792,7 +792,7 @@ div#slideshow span{
 	display: block;
 	overflow: hidden;
 	height: 20px;
-	background: url(#{resource['ligues:img/slideshow-nav-bg.png']}) repeat-x top left; /* url(../img/slideshow-nav-bg.png) */
+	background: url("#{resource['ligues:img/slideshow-nav-bg.png']}") repeat-x top left; /* url(../img/slideshow-nav-bg.png) */
 	float: left;
 }
 
@@ -800,20 +800,20 @@ div#slideshow span{
 	width: 13px;
 	height: 20px;
 	float: left;
-	background: url(#{resource['ligues:img/slideshow-nav-left.png']}) no-repeat top left; /* url(../img/slideshow-nav-left.png)*/
+	background: url("#{resource['ligues:img/slideshow-nav-left.png']}") no-repeat top left; /* url(../img/slideshow-nav-left.png)*/
 }
 
 #slideshow-nav-holder .nav-right{
 	width: 13px;
 	height: 20px;
 	float: left;
-	background: url(#{resource['ligues:img/slideshow-nav-right.png']}) no-repeat top right; /*url(../img/slideshow-nav-right.png) */
+	background: url("#{resource['ligues:img/slideshow-nav-right.png']}") no-repeat top right; /*url(../img/slideshow-nav-right.png) */
 }
 
 #slideshow-nav a { 
 	display: block;
 	float: left;
-	background: url(#{resource['ligues:img/slideshow-button.png']}) no-repeat; /* url(../img/slideshow-button.png) */
+	background: url("#{resource['ligues:img/slideshow-button.png']}") no-repeat; /* url(../img/slideshow-button.png) */
 	height: 12px;
 	width: 12px;
 	margin-top: 7px;
@@ -823,11 +823,11 @@ div#slideshow span{
 }
 
 #slideshow-nav a:hover{
-	background: url(#{resource['ligues:img/slideshow-button.png']}) no-repeat 0px -24px; /* url(../img/slideshow-button.png) */
+	background: url("#{resource['ligues:img/slideshow-button.png']}") no-repeat 0px -24px; /* url(../img/slideshow-button.png) */
 }
 
 #slideshow-nav a.activeSlide { 
-	background: url(#{resource['ligues:img/slideshow-button.png']}) no-repeat 0px -12px; /* url(../img/slideshow-button.png) */
+	background: url("#{resource['ligues:img/slideshow-button.png']}") no-repeat 0px -12px; /* url(../img/slideshow-button.png) */
 }
 
 
@@ -923,7 +923,7 @@ ul.gallery.three-cols li span{
 }
 
 ul.gallery.four-cols li span{
-	background: url(#{resource['ligues:img/over_multimedia_1.png']}) no-repeat; /* url(../img/over_multimedia_1.png) */
+	background: url("#{resource['ligues:img/over_multimedia_1.png']}") no-repeat; /* url(../img/over_multimedia_1.png) */
 }
 
 ul.gallery li em{
@@ -989,7 +989,7 @@ ul.blog-pager{
 ul.blog-pager li{
 	width: 90px;
 	height: 32px;
-	background-image: url(#{resource['ligues:img/page.png']}); /**/
+	background-image: url("#{resource['ligues:img/page.png']}"); /**/
 	background-repeat: no-repeat;
 }
 
@@ -1032,7 +1032,7 @@ ul.blog-pager li:last-child{
 	width:24px;
 	height: 24px;
 	float: left;
-        background: url(#{resource['ligues:img/gallery-pager.png']}) no-repeat; /*url(../img/gallery-pager.png)*/
+        background: url("#{resource['ligues:img/gallery-pager.png']}") no-repeat; /*url(../img/gallery-pager.png)*/
 	background-position: -28px 0px;
 	margin-left: 5px;
 }
@@ -1064,7 +1064,7 @@ ul.blog-pager li:last-child{
 	width: 670px;
 	min-height: 650px;
 	float: left;
-	background: url(#{resource['ligues:img/post-divider.png']}) no-repeat top right; /* url(../img/post-divider.png) */
+	background: url("#{resource['ligues:img/post-divider.png']}") no-repeat top right; /* url(../img/post-divider.png) */
 	margin-top: 10px;
 	margin-bottom: 5px;
 }
@@ -1089,7 +1089,7 @@ ul.blog-pager li:last-child{
 	height: 27px;
 	padding-top: 8px;
 	text-decoration: none;
-	background-image: url(#{resource['ligues:img/bg_tit.png']}); /* url(../img/bg_tit.png) */
+	background-image: url("#{resource['ligues:img/bg_tit.png']}"); /* url(../img/bg_tit.png) */
 	background-repeat: no-repeat;
 	background-position: 0px 0px;
 }
@@ -1102,7 +1102,7 @@ ul.blog-pager li:last-child{
 	height: 27px;
 	padding-top: 8px;
 	text-decoration: none;
-	background: url(#{resource['ligues:img/post-title-bg-full.png']}) no-repeat 0px 0px; /* url(../img/post-title-bg-full.png) */
+	background: url("#{resource['ligues:img/post-title-bg-full.png']}") no-repeat 0px 0px; /* url(../img/post-title-bg-full.png) */
 }
 
 ul.meta{
@@ -1118,7 +1118,7 @@ ul.meta li{
 	display: block;
 	float: left;
 	height: 100%;
-	background: url(#{resource['ligues:img/icons.png']}) no-repeat; /* url(../img/icons.png) */
+	background: url("#{resource['ligues:img/icons.png']}") no-repeat; /* url(../img/icons.png) */
 	text-indent: 28px;
 	padding-top: 7px;
 	margin-right: 5px;
@@ -1145,7 +1145,7 @@ ul.meta li.category{
 	width: 559px;
 	height: 260px;
 	margin-left: 30px;
-	background: url(#{resource['ligues:img/post-shadow.png']}) no-repeat bottom center; /* url(../img/post-shadow.png) */
+	background: url("#{resource['ligues:img/post-shadow.png']}") no-repeat bottom center; /* url(../img/post-shadow.png) */
 }
 
 #posts.full-width div.post-img{
@@ -1153,7 +1153,7 @@ ul.meta li.category{
 	width: 846px;
 	height: 260px;
 	margin-left: 30px;
-	background: url(#{resource['ligues:img/post-shadow.png']}) no-repeat bottom center; /* url(../img/post-shadow.png) */
+	background: url("#{resource['ligues:img/post-shadow.png']}") no-repeat bottom center; /* url(../img/post-shadow.png) */
 }
 
 div#posts div.post-img img{
@@ -1514,7 +1514,7 @@ h5.accordion-trigger a,
 h5.toggle-trigger a {
 	text-decoration: none;
 	display: block;
-	background: url(#{resource['ligues:img/sidebar-header-bullet.png']}) no-repeat 0px 17px; /* url(../img/sidebar-header-bullet.png) */
+	background: url("#{resource['ligues:img/sidebar-header-bullet.png']}") no-repeat 0px 17px; /* url(../img/sidebar-header-bullet.png) */
 	text-indent: 17px;
 }
 
@@ -1585,7 +1585,7 @@ div#footer ul.footer-cols li.col{
 	float: left;
 	margin-top: 3px;
 	padding-bottom: 15px;
-	background: url(#{resource['ligues:img/footer-divisor.png']}) no-repeat top left; /* url(../img/footer-divisor.png)*/
+	background: url("#{resource['ligues:img/footer-divisor.png']}") no-repeat top left; /* url(../img/footer-divisor.png)*/
 	background-position: 0px 2px;
 }
 
@@ -1631,7 +1631,7 @@ div#footer div.footer-bottom{
 	color: #333;
 	padding: 0px;
 	border-top: 1px solid #333638;
-	background-image: url(#{resource['ligues:img/glare-footer-bottom2.png']}); /* url(../img/glare-footer-bottom2.png) */
+	background-image: url("#{resource['ligues:img/glare-footer-bottom2.png']}"); /* url(../img/glare-footer-bottom2.png) */
 	background-repeat: no-repeat;
 	background-position: center center;
 }

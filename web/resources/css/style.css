@@ -114,7 +114,7 @@ h1, h1 a:link, h1 a:visited, h1 a:hover{
 #nav ul li a:hover{
     display:inline;
     color:#000;
-    background:url('./../resources/images/bgright.jpg') no-repeat top right ;
+    background:url(#{resource['images:bgright.jpg']}) no-repeat top right; /*url('./../resources/images/bgright.jpg')*/
     display:block;
     text-decoration:none;
     height:44px;
