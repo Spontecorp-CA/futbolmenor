@@ -4,43 +4,26 @@
                 xmlns:p="http://primefaces.org/ui"
                 xmlns:f="http://java.sun.com/jsf/core">
 
-        <!-- recent posts -->
-        <li class="recent-posts">
-            <h2 class="custom"><span>ULTIMOS COMENTARIOS TW</span></h2>
-            <ul>
-                <li>
-                    <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
-                    <script>
-                        new TWTR.Widget({
-                            version: 2,
-                            type: 'profile',
-                            rpp: 5,
-                            interval: 30000,
-                            width: 260,
-                            height: 200,
-                            theme: {
-                                shell: {
-                                    background: '#666666',
-                                    color: '#fef00a'
-                                },
-                                tweets: {
-                                    background: '#999',
-                                    color: '#ffffff',
-                                    links: '#fed30a'
-                                }
-                            },
-                            features: {
-                                scrollbar: false,
-                                loop: false,
-                                live: false,
-                                behavior: 'all'
-                            }
-                        }).render().setUser('FutbolMenor').start();
-                    </script>
-                    <p><a href="#">....</a></p>
-                </li>
-            </ul>
-        </li>
-        <!-- ENDS recent posts -->
+    <!-- recent posts -->
+    <li class="recent-posts" style="display: block;">
+        <h2 class="custom"><span>ULTIMOS COMENTARIOS TW</span></h2>
+        <ul>
+            <li style="width: 340px; margin-left: -45px;">
+                <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+
+                <a class="twitter-timeline" href="https://twitter.com/FutbolMenor" data-widget-id="458682058160603136">Tweets by @FutbolMenor</a>
+                <script>!function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                        if (!d.getElementById(id)) {
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = p + "://platform.twitter.com/widgets.js";
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }
+                    }(document, "script", "twitter-wjs");</script>
+            </li>
+        </ul>
+    </li>
+    <!-- ENDS recent posts -->
 
 </ui:composition>
