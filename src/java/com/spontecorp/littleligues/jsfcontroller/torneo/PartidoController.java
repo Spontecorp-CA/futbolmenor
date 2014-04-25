@@ -51,7 +51,7 @@ public class PartidoController implements Serializable {
     private Liga liga;
     private Temporada temporada;
     private boolean temporadaListDisabled = true;
-    private Fase fase;
+    private static Fase fase;
     private boolean faseListDisabled = true;
     private Grupo grupo;
     private boolean grupoListDisabled = true;
@@ -94,7 +94,7 @@ public class PartidoController implements Serializable {
                 public DataModel createPageDataModel() {
                     ListDataModel<Partido> partidos = null;
                     if (llave != null && categoria != null) {
-                        System.out.println("1.- Entro a createPageDataModel");
+                        LlaveJpaControllerExt llaveJpaController = new LlaveJpaControllerExt(LittleLiguesUtils.getEmf());
                         partidos = new ListDataModel(getJpaController().findPartidoEntitiesOnCategoriaWithinLlave(categoria, llave));
                     }
                     if (jornada != null && categoria != null) {
@@ -146,7 +146,6 @@ public class PartidoController implements Serializable {
     public String update() {
         try {
             if(current.getStatus() == StatusPartidoEnum.SUSPENDIDO.valor()){
-                System.out.println("Paso por aqui...");
                 current.setGolEq1(null);
                 current.setGolEq2(null);
             }
@@ -239,6 +238,7 @@ public class PartidoController implements Serializable {
     public void showTable(ActionEvent evt){
         recreateModel();
         partidoTableShow = true;
+        
     }
     
     public void updateEquipos(ActionEvent evt){
@@ -420,12 +420,14 @@ public class PartidoController implements Serializable {
     public List<SelectItem> getLlavesAvalaibleSelectOne() {
         LlaveJpaControllerExt llaveJpaController = new LlaveJpaControllerExt(LittleLiguesUtils.getEmf());
         //SelectItem[] arreglo = null;
+                
         List<SelectItem> arreglo = new ArrayList<>();
         if (!llaveListDisabled && (fase != null)) {
             List<Llave> llaves = llaveJpaController.findLlavesOnFase(fase);
             //arreglo = JsfUtil.getSelectItems(llaves, true);
             for(Llave llaveObj : llaves){
                 arreglo.add(new SelectItem(llaveObj, llaveObj.toString()));
+                //System.out.println("LlaveObj: " + llaveObj + " llaveObj: " + llaveObj.getId());
             }
         }
         return arreglo;
@@ -476,7 +478,8 @@ public class PartidoController implements Serializable {
             }
             PartidoController controller = (PartidoController) facesContext.getApplication().getELResolver().
                     getValue(facesContext.getELContext(), null, "partidoController");
-            return controller.getJpaController().findPartido(getKey(value));
+            return value;
+            
         }
 
         java.lang.Integer getKey(String value) {
