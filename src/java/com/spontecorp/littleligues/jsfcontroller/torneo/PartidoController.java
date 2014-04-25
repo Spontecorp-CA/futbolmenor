@@ -95,6 +95,7 @@ public class PartidoController implements Serializable {
                     ListDataModel<Partido> partidos = null;
                     if (llave != null && categoria != null) {
                         LlaveJpaControllerExt llaveJpaController = new LlaveJpaControllerExt(LittleLiguesUtils.getEmf());
+                        //Llave llaveFinal = llaveJpaController.findLlaveFinal(llave.getNombre(), fase);
                         partidos = new ListDataModel(getJpaController().findPartidoEntitiesOnCategoriaWithinLlave(categoria, llave));
                     }
                     if (jornada != null && categoria != null) {
@@ -427,7 +428,7 @@ public class PartidoController implements Serializable {
             //arreglo = JsfUtil.getSelectItems(llaves, true);
             for(Llave llaveObj : llaves){
                 arreglo.add(new SelectItem(llaveObj, llaveObj.toString()));
-                //System.out.println("LlaveObj: " + llaveObj + " llaveObj: " + llaveObj.getId());
+                System.out.println("LlaveObj: " + llaveObj + " llaveObj.toString: " + llaveObj.getId());
             }
         }
         return arreglo;
