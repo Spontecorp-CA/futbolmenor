@@ -56,12 +56,16 @@ public class PartidoJpaControllerExt extends PartidoJpaController{
         List<Partido> partidos = new ArrayList<>();
         EntityManager em = getEntityManager();
         try {
+            
             String query = "SELECT p from Partido p "
                     + "WHERE p.llaveId = :llaveId AND p.categoriaId = :categoria";
             Query q = em.createQuery(query);
             q.setParameter("llaveId", llave);
             q.setParameter("categoria", categoria);
             partidos = q.getResultList();
+            System.out.println("4.- Class: PartidoJpaControllerExt - Methodo: "
+                    + "findPartidoEntitiesOnCategoriaWithinLlave. Total Partidos: " + partidos.size());
+            
         } finally {
             em.close();
         }
