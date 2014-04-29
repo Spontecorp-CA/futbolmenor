@@ -2,7 +2,6 @@ package com.spontecorp.littleligues.jpacontroller.extentions;
 
 import com.spontecorp.littleligues.jpacontroller.torneo.GrupoJpaController;
 import com.spontecorp.littleligues.model.torneo.Fase;
-import com.spontecorp.littleligues.model.torneo.Fase_;
 import com.spontecorp.littleligues.model.torneo.Grupo;
 import com.spontecorp.littleligues.model.torneo.Grupo_;
 import java.util.ArrayList;
@@ -41,7 +40,7 @@ public class GrupoJpaControllerExt extends GrupoJpaController{
 
     private List<Grupo> findGrupoEntitiesOnFase(Fase fase, boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
-        List<Grupo> grupos = new ArrayList<>();
+        List<Grupo> grupos = new ArrayList<Grupo>();
         try {
             CriteriaBuilder cb = em.getCriteriaBuilder();
             CriteriaQuery cq = cb.createQuery();

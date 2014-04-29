@@ -31,7 +31,7 @@ public class JornadaCalendarBean implements Serializable{
     private int idCategoria;
     private int idGrupo;
     private int idJornada;
-    List<Partido> partidoList = new ArrayList<>();
+    List<Partido> partidoList = new ArrayList<Partido>();
     private int totalPartidoList;
     
     public JornadaCalendarBean() {

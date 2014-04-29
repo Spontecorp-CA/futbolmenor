@@ -422,7 +422,7 @@ public class PartidoController implements Serializable {
         LlaveJpaControllerExt llaveJpaController = new LlaveJpaControllerExt(LittleLiguesUtils.getEmf());
         //SelectItem[] arreglo = null;
                 
-        List<SelectItem> arreglo = new ArrayList<>();
+        List<SelectItem> arreglo = new ArrayList<SelectItem>();
         if (!llaveListDisabled && (fase != null)) {
             List<Llave> llaves = llaveJpaController.findLlavesOnFase(fase);
             //arreglo = JsfUtil.getSelectItems(llaves, true);

@@ -23,7 +23,6 @@ import com.spontecorp.littleligues.model.torneo.Temporada;
 import com.spontecorp.littleligues.model.torneo.Temporada_;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 
 /**

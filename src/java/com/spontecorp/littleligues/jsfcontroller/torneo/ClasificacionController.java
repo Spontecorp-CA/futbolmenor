@@ -166,7 +166,7 @@ public class ClasificacionController implements Serializable{
     }
 
     private DataModel makeModelByCategoriaAndJornada() {
-        List<Clasifica> clasificacion = new ArrayList<>();
+        List<Clasifica> clasificacion = new ArrayList<Clasifica>();
         List<Object[]> calcula = getJpaController().findClasificacionByCategoria(categoria, jornada, grupo, liga);
         for (Object[] objs : calcula) {
             Clasifica clasifica = new Clasifica();

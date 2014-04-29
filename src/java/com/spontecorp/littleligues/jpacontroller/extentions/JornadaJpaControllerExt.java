@@ -25,7 +25,7 @@ public class JornadaJpaControllerExt extends JornadaJpaController{
     }
     
     public List<Jornada> findJornadasOnGrupo(Grupo grupo){
-        List<Jornada> jornadas = new ArrayList<>();
+        List<Jornada> jornadas = new ArrayList<Jornada>();
         EntityManager em = getEntityManager();
         try {
             CriteriaBuilder cb = em.getCriteriaBuilder();
@@ -47,7 +47,7 @@ public class JornadaJpaControllerExt extends JornadaJpaController{
     
     private List<Jornada> findJornadaEntitiesOnGrupo(Grupo grupo, boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
-        List<Jornada> jornadas = new ArrayList<>();
+        List<Jornada> jornadas = new ArrayList<Jornada>();
         try {
             CriteriaBuilder cb = em.getCriteriaBuilder();
             CriteriaQuery cq = cb.createQuery();
@@ -73,7 +73,7 @@ public class JornadaJpaControllerExt extends JornadaJpaController{
      */
     public List<Jornada> findJornadaEntitiesOnGrupo(Grupo grupo) {
         EntityManager em = getEntityManager();
-        List<Jornada> jornadas = new ArrayList<>();
+        List<Jornada> jornadas = new ArrayList<Jornada>();
         try {
             CriteriaBuilder cb = em.getCriteriaBuilder();
             CriteriaQuery cq = cb.createQuery();

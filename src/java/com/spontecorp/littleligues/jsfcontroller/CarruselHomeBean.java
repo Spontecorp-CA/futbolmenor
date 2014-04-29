@@ -87,7 +87,7 @@ public final class CarruselHomeBean implements Serializable {
      */
     public DataModel<Liga> getLigas() {
         if (ligas == null) {
-            ligas = new ListDataModel<>(getJpaController().findLigaEntities());
+            ligas = new ListDataModel(getJpaController().findLigaEntities());
         }
         return ligas;
     }

@@ -1,12 +1,8 @@
 package com.spontecorp.littleligues.jpacontroller.extentions;
 
 import com.spontecorp.littleligues.jpacontroller.LigaJpaController;
-import com.spontecorp.littleligues.model.liga.Categoria;
 import com.spontecorp.littleligues.model.liga.Liga;
 import com.spontecorp.littleligues.model.liga.Liga_;
-import com.spontecorp.littleligues.model.torneo.Grupo;
-import com.spontecorp.littleligues.model.torneo.Jornada;
-import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.TypedQuery;

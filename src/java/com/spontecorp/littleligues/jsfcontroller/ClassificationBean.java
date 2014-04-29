@@ -85,7 +85,7 @@ public final class ClassificationBean implements Serializable {
      */
     public DataModel<Liga> getLigas() {
         if (ligas == null) {
-            ligas = new ListDataModel<>(getJpaController().findLigaEntities());
+            ligas = new ListDataModel(getJpaController().findLigaEntities());
         }
         return ligas;
     }
@@ -144,7 +144,7 @@ public final class ClassificationBean implements Serializable {
         recreateModel();
         if (noticiasLiga == null) {
             List<Noticia> lista = getJpaController().findNoticiasLigaEntities(entity);
-            noticiasLiga = new ListDataModel<>(lista);
+            noticiasLiga = new ListDataModel(lista);
         }
         return noticiasLiga;
     }
@@ -160,7 +160,7 @@ public final class ClassificationBean implements Serializable {
         VideoJpaController videoJpaController = new VideoJpaController(LittleLiguesUtils.getEmf());
         if (videosLiga == null) {
             List<Video> lista = videoJpaController.findVideosLigaEntities(entity);
-            videosLiga = new ListDataModel<>(lista);
+            videosLiga = new ListDataModel(lista);
         }
         return videosLiga;
     }
@@ -511,7 +511,7 @@ public final class ClassificationBean implements Serializable {
      */
     public List<Clasifica> getClasificacion() {
         ClasificacionJpaControllerExt clasificacionJpaController = new ClasificacionJpaControllerExt(LittleLiguesUtils.getEmf());
-        List<Clasifica> clasificacion = new ArrayList<>();
+        List<Clasifica> clasificacion = new ArrayList<Clasifica>();
         int statusLocal = 1;
         int statusVisitante = 0;
 

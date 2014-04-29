@@ -75,7 +75,7 @@ public class FaseControllerExt extends FaseController {
     
     public List<SelectItem> getLigas() {
         List<Liga> ligas = getLigaJpaController().findLigaEntities();
-        List<SelectItem> selectLigas = new ArrayList<>();
+        List<SelectItem> selectLigas = new ArrayList<SelectItem>();
         selectLigas.add(new SelectItem("---"));
         for (Liga liga : ligas) {
             selectLigas.add(new SelectItem(liga, liga.getNombre()));
@@ -84,7 +84,7 @@ public class FaseControllerExt extends FaseController {
     }
 
     public List<SelectItem> getTemporadas() {
-        List<SelectItem> selectTemporadas = new ArrayList<>();
+        List<SelectItem> selectTemporadas = new ArrayList<SelectItem>();
         selectTemporadas.add(new SelectItem("---"));
         if (!temporadaListDisable && (selectedLiga != null)) {
             List<Temporada> temporadas = selectedLiga.getTemporadaList();

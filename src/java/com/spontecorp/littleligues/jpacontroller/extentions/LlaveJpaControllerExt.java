@@ -41,7 +41,7 @@ public class LlaveJpaControllerExt extends LlaveJpaController{
 
     private List<Llave> findLlaveEntitiesOnFase(Fase fase, boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
-        List<Llave> llaves = new ArrayList<>();
+        List<Llave> llaves = new ArrayList<Llave>();
         try {
             CriteriaBuilder cb = em.getCriteriaBuilder();
             CriteriaQuery cq = cb.createQuery();

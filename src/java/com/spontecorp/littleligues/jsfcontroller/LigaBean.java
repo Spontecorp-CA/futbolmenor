@@ -86,7 +86,7 @@ public final class LigaBean implements Serializable {
      */
     public DataModel<Liga> getLigas() {
         if (ligas == null) {
-            ligas = new ListDataModel<>(getJpaController().findLigaEntities());
+            ligas = new ListDataModel(getJpaController().findLigaEntities());
         }
         return ligas;
     }
@@ -150,7 +150,7 @@ public final class LigaBean implements Serializable {
         recreateModel();
         if (noticiasLiga == null) {
             List<Noticia> lista = getJpaController().findNoticiasLigaEntities(entity);
-            noticiasLiga = new ListDataModel<>(lista);
+            noticiasLiga = new ListDataModel(lista);
         }
         return noticiasLiga;
     }
@@ -166,7 +166,7 @@ public final class LigaBean implements Serializable {
         VideoJpaController videoJpaController = new VideoJpaController(LittleLiguesUtils.getEmf());
         if (videosLiga == null) {
             List<Video> lista = videoJpaController.findVideosLigaEntities(entity);
-            videosLiga = new ListDataModel<>(lista);
+            videosLiga = new ListDataModel(lista);
         }
         return videosLiga;
     }
@@ -388,7 +388,7 @@ public final class LigaBean implements Serializable {
      */
     public List<Clasifica> getClasificacion() {
         ClasificacionJpaControllerExt clasificacionJpaController = new ClasificacionJpaControllerExt(LittleLiguesUtils.getEmf());
-        List<Clasifica> clasificacion = new ArrayList<>();
+        List<Clasifica> clasificacion = new ArrayList<Clasifica>();
         int statusLocal = 1;
         int statusVisitante = 0;
 
@@ -545,7 +545,7 @@ public final class LigaBean implements Serializable {
     public List<Categoria> getClassification() {
         CategoriaJpaControllerExt categoriaJpaController = new CategoriaJpaControllerExt(LittleLiguesUtils.getEmf());
         List<Categoria> allCategories = categoriaJpaController.findListCategoria();
-        List<Categoria> allCategories2 = new ArrayList<>();
+        List<Categoria> allCategories2 = new ArrayList<Categoria>();
 
         for (Categoria categoriaActual : allCategories) {
             Categoria cat = calcClassification(categoriaActual);
@@ -570,21 +570,21 @@ public final class LigaBean implements Serializable {
 
         //Lista de Categorias
         List<Categoria> allCategories = categoriaJpaController.findListCategoria();
-        List<Categoria> allCategories2 = new ArrayList<>();
+        List<Categoria> allCategories2 = new ArrayList<Categoria>();
         List<Grupo> allGrupos = grupoJpaController.findGruposOnFase(fase);
         List<Llave> allLlaves = llaveJpaController.findLlavesOnFase(fase);
 
         Categoria categoriaActual = categoria;
         boolean hayPartidos = false;
 
-        List<Grupo> allGrupos2 = new ArrayList<>();
-        List<Llave> allLlaves2 = new ArrayList<>();
+        List<Grupo> allGrupos2 = new ArrayList<Grupo>();
+        List<Llave> allLlaves2 = new ArrayList<Llave>();
 
         if (allGrupos.size() > 0) {
             for (Grupo grupoActual : allGrupos) {
                 List<Jornada> allJornadas = grupoActual.getJornadaList();
-                List<Jornada> allJornadas2 = new ArrayList<>();
-                List<Partido> partidoList = new ArrayList<>();
+                List<Jornada> allJornadas2 = new ArrayList<Jornada>();
+                List<Partido> partidoList = new ArrayList<Partido>();
 
                 grupoActual.setTotalJornadas(allJornadas.size());
 
@@ -628,7 +628,7 @@ public final class LigaBean implements Serializable {
             }
         } else if (allLlaves.size() > 0) {
             for (Llave llaveActual : allLlaves) {
-                List<Partido> partidoList = new ArrayList<>();
+                List<Partido> partidoList = new ArrayList<Partido>();
 
                 //Se busca el Calendario por cada Llave
                 partidoList = getListaPartidosLlaves(categoriaActual, llaveActual);
@@ -692,7 +692,7 @@ public final class LigaBean implements Serializable {
      */
     public List<Clasifica> calcularClasificacion(Categoria categoria, Jornada jornada, Grupo grupo, Liga entity) {
         ClasificacionJpaControllerExt clasificacionJpaController = new ClasificacionJpaControllerExt(LittleLiguesUtils.getEmf());
-        List<Clasifica> clasificacion = new ArrayList<>();
+        List<Clasifica> clasificacion = new ArrayList<Clasifica>();
         int statusLocal = 1;
         int statusVisitante = 0;
 

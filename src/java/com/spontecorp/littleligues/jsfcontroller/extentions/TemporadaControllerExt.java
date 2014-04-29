@@ -104,14 +104,14 @@ public class TemporadaControllerExt extends TemporadaController {
     private List<Fase> fases;
     
     //Cache de las entidades
-    private Map<String, Fase> fasesConGrupos = new HashMap<>();
-    private Map<String, Fase> fasesConLlaves = new HashMap<>();
-    private Map<String, Fase> mapFases = new HashMap<>();
-    private Map<String, Grupo> mapGrupos = new HashMap<>();
-    private Map<String, Llave> mapLlaves = new HashMap<>();
-    private Map<String, Equipo> mapEquipos = new HashMap<>();
-    private Map<String, Cancha> mapCanchas = new HashMap<>();
-    private Map<String, Jornada> mapJornadas = new HashMap<>();
+    private Map<String, Fase> fasesConGrupos = new HashMap();
+    private Map<String, Fase> fasesConLlaves = new HashMap();
+    private Map<String, Fase> mapFases = new HashMap();
+    private Map<String, Grupo> mapGrupos = new HashMap();
+    private Map<String, Llave> mapLlaves = new HashMap();
+    private Map<String, Equipo> mapEquipos = new HashMap();
+    private Map<String, Cancha> mapCanchas = new HashMap();
+    private Map<String, Jornada> mapJornadas = new HashMap();
     
     //Data From DB
     private CategoriaJpaControllerExt categoriaJpaController = null;
@@ -389,7 +389,7 @@ public class TemporadaControllerExt extends TemporadaController {
 
     // Parte final de la configuración
     public List<SelectItem> getFasesConGrupos() {
-        List<SelectItem> fasesList = new ArrayList<>();
+        List<SelectItem> fasesList = new ArrayList<SelectItem>();
         fasesList.add(new SelectItem("-- Seleccione Fase --"));
         for (Map.Entry<String, Fase> item : fasesConGrupos.entrySet()) {
             fasesList.add(new SelectItem(item.getKey()));
@@ -398,7 +398,7 @@ public class TemporadaControllerExt extends TemporadaController {
     }
     
     public List<SelectItem> getFasesConLlaves(){
-        List<SelectItem> fasesList = new ArrayList<>();
+        List<SelectItem> fasesList = new ArrayList<SelectItem>();
         fasesList.add(new SelectItem("-- Seleccione Fase --"));
         for (Map.Entry<String, Fase> item : fasesConLlaves.entrySet()) {
             fasesList.add(new SelectItem(item.getKey()));
@@ -407,7 +407,7 @@ public class TemporadaControllerExt extends TemporadaController {
     }
 
     public List<SelectItem> getGruposDefase() {
-        List<SelectItem> grupoList = new ArrayList<>();
+        List<SelectItem> grupoList = new ArrayList<SelectItem>();
         grupoList.add(new SelectItem("-- Seleccione Grupo --"));
 
         if (!grupoListDiseable && (faseSelectedFinal != null)) {
@@ -421,7 +421,7 @@ public class TemporadaControllerExt extends TemporadaController {
     }
 
     public List<SelectItem> getJornadasEnGrupo() {
-        List<SelectItem> jornadaList = new ArrayList<>();
+        List<SelectItem> jornadaList = new ArrayList<SelectItem>();
         jornadaList.add(new SelectItem("-- Seleccione Jornada --"));
 
         if (!jornadaListDiseable && (grupoSelected != null)) {
@@ -434,7 +434,7 @@ public class TemporadaControllerExt extends TemporadaController {
     }
 
     public List<SelectItem> getCategorias() {
-        List<SelectItem> catList = new ArrayList<>();
+        List<SelectItem> catList = new ArrayList<SelectItem>();
         catList.add(new SelectItem("-- Seleccione Categoria --"));
 
         for (Categoria cat : categorias) {
@@ -445,12 +445,12 @@ public class TemporadaControllerExt extends TemporadaController {
     }
 
     public List<SelectItem> getEquipo1List() {
-        List<SelectItem> equipo1List = new ArrayList<>();
+        List<SelectItem> equipo1List = new ArrayList<SelectItem>();
         return makeEquiposList(equipo1List);
     }
 
     public List<SelectItem> getEquipo2List() {
-        List<SelectItem> equipo2List = new ArrayList<>();
+        List<SelectItem> equipo2List = new ArrayList<SelectItem>();
         return makeEquiposList(equipo2List);
     }
 
@@ -465,7 +465,7 @@ public class TemporadaControllerExt extends TemporadaController {
     }
 
     public List<SelectItem> getCanchasList() {
-        List<SelectItem> canchasList = new ArrayList<>();
+        List<SelectItem> canchasList = new ArrayList<SelectItem>();
         canchasList.add(new SelectItem("-- Seleccione Cancha --"));
         for (Map.Entry<String, Cancha> item : mapCanchas.entrySet()) {
             canchasList.add(new SelectItem(item.getKey()));
@@ -478,7 +478,7 @@ public class TemporadaControllerExt extends TemporadaController {
         fasesReady = false;
         confGrupos = false;
         confLlaves = false;
-        gruposConJornadas = new HashMap<>();
+        gruposConJornadas = new HashMap();
         readCategorias();
         readEquipos();
         readCanchas();
@@ -510,7 +510,7 @@ public class TemporadaControllerExt extends TemporadaController {
     }
 
     public void readFases() throws UnsupportedEncodingException {
-        fases = new ArrayList<>();
+        fases = new ArrayList();
 
         gruposTotales = 0;
         llavesTotales = 0;
@@ -518,8 +518,8 @@ public class TemporadaControllerExt extends TemporadaController {
             fase = new Fase();
             fase.setNombre(fasesStrings[i]);
 
-            grupos = new ArrayList<>();
-            llaves = new ArrayList<>();
+            grupos = new ArrayList();
+            llaves = new ArrayList();
             if (tieneGrupos[i].equals("si")) {
                 for (int j = 0; j < cantGruposLlaves[i]; j++) {
                     Grupo grupo = new Grupo();
@@ -554,7 +554,7 @@ public class TemporadaControllerExt extends TemporadaController {
         fase = fasesConGrupos.get(faseSelected);
         for (Grupo group : fase.getGrupoList()) {
             group.setNombre(nombreGrupo[i]);
-            jornadasXGrupo = new ArrayList<>();
+            jornadasXGrupo = new ArrayList();
             for (int j = 0; j < cantJornadas[i]; j++) {
                 jornada = new Jornada();
                 jornada.setNumero(j + 1);
@@ -582,7 +582,7 @@ public class TemporadaControllerExt extends TemporadaController {
         fase = fasesConLlaves.get(faseConLlaveSelected);
         for (Llave llave : fase.getLlaveList()) {
             llave.setNombre(nombreGrupo[i]);
-            partidosXLlave = new ArrayList<>();
+            partidosXLlave = new ArrayList();
             for (int j = 0; j < cantPartidosXLlave[i]; j++) {
                 partido = new Partido();
                 partidosXLlave.add(partido);
@@ -646,7 +646,7 @@ public class TemporadaControllerExt extends TemporadaController {
     private void generateGroups(String faceSelected) {
         System.out.println("Llegó a configurar los grupos");
         fase = fasesConGrupos.get(faceSelected);
-        gruposEnFase = new ArrayList<>();
+        gruposEnFase = new ArrayList();
         grupos = fase.getGrupoList();
         for (Grupo item : grupos) {
             gruposEnFase.add("");
@@ -659,7 +659,7 @@ public class TemporadaControllerExt extends TemporadaController {
     private void generateLlaves(String faseConLlaveSelected) {
         System.out.println("Llegó a configurar las llaves");
         fase = fasesConLlaves.get(faseConLlaveSelected);
-        llavesEnFase = new ArrayList<>();
+        llavesEnFase = new ArrayList();
         llaves = fase.getLlaveList();
         for (Llave item : llaves) {
             llavesEnFase.add("");

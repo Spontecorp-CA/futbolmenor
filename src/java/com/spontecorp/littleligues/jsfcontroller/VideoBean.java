@@ -182,7 +182,7 @@ public class VideoBean implements Serializable{
     public DataModel<Video> getItems() {
         if (items == null) {
             lista = getJpaController().findVideoEntities();
-            items = new ListDataModel<>(lista);
+            items = new ListDataModel(lista);
         }
         return items;
     }

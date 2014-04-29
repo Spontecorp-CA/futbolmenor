@@ -49,7 +49,7 @@ public class PatrocinanteBean implements Serializable {
 
     public DataModel<Patrocinante> getItems() {
         if(items == null){
-            items = new ListDataModel<>(getJpaController().findPatrocinanteEntities()); 
+            items = new ListDataModel(getJpaController().findPatrocinanteEntities()); 
         }
         return items;
     }

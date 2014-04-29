@@ -41,7 +41,7 @@ public class EquipoController implements Serializable {
     public Equipo getSelected() {
         if (current == null) {
             current = new Equipo();
-            canchas = new ArrayList<>();
+            canchas = new ArrayList();
             selectedItemIndex = -1;
         }
         return current;

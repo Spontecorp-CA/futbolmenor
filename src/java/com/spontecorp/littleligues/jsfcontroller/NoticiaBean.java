@@ -230,7 +230,7 @@ public final class NoticiaBean implements Serializable {
     public DataModel<Noticia> getItems() {
         if (items == null) {
             lista = getJpaController().findNoticiaEntities();
-            items = new ListDataModel<>(lista);
+            items = new ListDataModel(lista);
         }
         return items;
     }

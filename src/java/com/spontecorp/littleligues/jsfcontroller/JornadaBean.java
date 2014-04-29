@@ -34,7 +34,7 @@ public class JornadaBean implements Serializable {
     private int idGrupo;
     private int idJornada;
     private Grupo grupo;
-    List<Clasifica> clasificaList = new ArrayList<>();
+    List<Clasifica> clasificaList = new ArrayList<Clasifica>();
 
     public JornadaBean() {
 
@@ -69,7 +69,7 @@ public class JornadaBean implements Serializable {
      */
     public final List<Clasifica> calcularClasificacion(Categoria categoria, Jornada jornada, Grupo grupo, Liga liga) {
         ClasificacionJpaControllerExt clasificacionJpaController = new ClasificacionJpaControllerExt(LittleLiguesUtils.getEmf());
-        List<Clasifica> clasificacion = new ArrayList<>();
+        List<Clasifica> clasificacion = new ArrayList<Clasifica>();
         int statusLocal = 1;
         int statusVisitante = 0;
 

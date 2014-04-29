@@ -532,7 +532,7 @@ public class EquipoJpaController implements Serializable {
      * @return 
      */
     public List<Equipo> findEquiposOnCategoriaLiga(Categoria categoria, Liga liga){
-        List<Equipo> equipos = new ArrayList<>();
+        List<Equipo> equipos = new ArrayList<Equipo>();
         EntityManager em = getEntityManager();
         try {
             String query = "SELECT e from Equipo e "

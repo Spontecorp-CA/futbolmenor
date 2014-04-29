@@ -211,10 +211,12 @@ public class LittleLiguesUtils {
                     String sufix = fileFormat;
                     File file = new File(prefix + "." + sufix);
                     byte[] bytes = uploadedFile.getContents();
-                    try (FileOutputStream fos = new FileOutputStream(file)) {
+                    FileOutputStream fos = null;
+                    try {
+                        fos = new FileOutputStream(file);
                         fos.write(bytes);
                         fos.flush();
-                    }
+                    } catch (Exception e){}
 
                     widththumb = im.getWidth();
                     heightthumb = im.getHeight();
@@ -254,7 +256,13 @@ public class LittleLiguesUtils {
                         retorno = true;
                     }
                 }
-            } catch (IOException | IllegalArgumentException | ImagingOpException ex) {
+            } catch (IOException ex){
+                System.out.println("Clase: " + this.getClass().getName() + ", Error al redimencionar la imagen " + ex);
+                return false;
+            } catch(IllegalArgumentException ex){
+                System.out.println("Clase: " + this.getClass().getName() + ", Error al redimencionar la imagen " + ex);
+                return false;
+            }catch (ImagingOpException ex) {
                 System.out.println("Clase: " + this.getClass().getName() + ", Error al redimencionar la imagen " + ex);
                 return false;
             }
@@ -277,11 +285,13 @@ public class LittleLiguesUtils {
                 String sufix = fileFormat;
                 File file = new File(prefix + "." + sufix);
                 byte[] bytes = uploadedFile.getContents();
-                try (FileOutputStream fos = new FileOutputStream(file)) {
+                FileOutputStream fos = null;
+                try {
+                    fos = new FileOutputStream(file);
                     fos.write(bytes);
                     fos.flush();
                     fos.close();
-                }
+                } catch(Exception e){}
                 
 
                 BufferedImage im = ImageIO.read(file);

@@ -79,7 +79,7 @@ public class CategoriaJpaControllerExt extends CategoriaJpaController {
      * @return 
      */
     public List<Categoria> findListCategoria(Fase fase) {
-        List<Categoria> categorias = new ArrayList<>();
+        List<Categoria> categorias = new ArrayList<Categoria>();
         EntityManager em = getEntityManager();
         try {
             String query = "select Categoria from Categoria where Categoria.id in "

@@ -62,7 +62,7 @@ public class GaleriaBean implements Serializable{
     public DataModel<Foto> getItems() {
         if(items == null){
             lista = getJpaController().findFotoEntities();
-            items = new ListDataModel<>(lista);
+            items = new ListDataModel(lista);
         }
         return items;
     }

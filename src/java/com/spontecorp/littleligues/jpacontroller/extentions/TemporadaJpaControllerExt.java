@@ -41,7 +41,7 @@ public class TemporadaJpaControllerExt extends TemporadaJpaController{
 
     private List<Temporada> findFaseEntitiesOnTemporada(Liga liga, boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
-        List<Temporada> temporadas = new ArrayList<>();
+        List<Temporada> temporadas = new ArrayList<Temporada>();
         try {
             CriteriaBuilder cb = em.getCriteriaBuilder();
             CriteriaQuery cq = cb.createQuery();

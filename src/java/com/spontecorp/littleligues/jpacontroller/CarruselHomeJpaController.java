@@ -140,7 +140,7 @@ public class CarruselHomeJpaController implements Serializable {
     
     //Verifico si el Grupo pertenece a la fase y Liga correspondiente
     public boolean findGrupo(int idGrupo, Liga liga) {
-        List<Grupo> grupos = new ArrayList<>();
+        List<Grupo> grupos = new ArrayList<Grupo>();
         EntityManager em = getEntityManager();
         try {
             String query = "SELECT g FROM Grupo g WHERE g.id = :idGrupo AND g.faseId IN "

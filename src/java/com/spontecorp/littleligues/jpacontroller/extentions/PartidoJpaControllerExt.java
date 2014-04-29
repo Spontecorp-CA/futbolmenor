@@ -53,7 +53,7 @@ public class PartidoJpaControllerExt extends PartidoJpaController{
     }
     
     public List<Partido> findPartidoEntitiesOnCategoriaWithinLlave(Categoria categoria, Llave llave) {
-        List<Partido> partidos = new ArrayList<>();
+        List<Partido> partidos = new ArrayList<Partido>();
         EntityManager em = getEntityManager();
         try {
             
@@ -74,7 +74,7 @@ public class PartidoJpaControllerExt extends PartidoJpaController{
     }
 
     public List<Partido> findPartidoEntitiesOnCategoriaWithinJornada(Categoria categoria, Jornada jornada) {
-        List<Partido> partidos = new ArrayList<>();
+        List<Partido> partidos = new ArrayList<Partido>();
         EntityManager em = getEntityManager();
         try {
             String query = "SELECT p from Partido p "

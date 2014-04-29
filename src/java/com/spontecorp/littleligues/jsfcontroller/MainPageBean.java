@@ -123,7 +123,7 @@ public final class MainPageBean implements Serializable{
         VideoJpaController videoJpaController = new VideoJpaController(LittleLiguesUtils.getEmf());
         if (videos == null) {
             List<Video> lista = videoJpaController.findVideoEntities(2,0);
-            videos = new ListDataModel<>(lista);
+            videos = new ListDataModel(lista);
         }
         return videos;
     }
@@ -189,7 +189,7 @@ public final class MainPageBean implements Serializable{
     public DataModel<Noticia> getNoticiasSlide() {
         recreateModel();
         if (noticiasSlide == null) {
-            noticiasSlide = new ListDataModel<>(getJpaController().findNoticiaSlideEntities());
+            noticiasSlide = new ListDataModel(getJpaController().findNoticiaSlideEntities());
         }
         return noticiasSlide;
     }
@@ -202,7 +202,7 @@ public final class MainPageBean implements Serializable{
     public DataModel<Noticia> getNoticiasHome() {
         recreateModel();
         if (noticiasHome == null) {
-            noticiasHome = new ListDataModel<>(getJpaController().findNoticiaHomeEntities());
+            noticiasHome = new ListDataModel(getJpaController().findNoticiaHomeEntities());
         }
         return noticiasHome;
     }

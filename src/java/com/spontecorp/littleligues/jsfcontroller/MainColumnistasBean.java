@@ -107,7 +107,7 @@ public class MainColumnistasBean {
 
     public DataModel<Cronica> getItems() {
         if(items == null){
-            items = new ListDataModel<>(getJpaController().findCronicaEntitiesActives());
+            items = new ListDataModel(getJpaController().findCronicaEntitiesActives());
         }
         return items;
     }

@@ -58,7 +58,7 @@ public class CronistaBean implements Serializable{
     
     public DataModel<Cronista> getItems() {
         if (items == null) {
-            items = new ListDataModel<>(getJpaController().findCronistaEntities());
+            items = new ListDataModel(getJpaController().findCronistaEntities());
         }
         return items;
     }

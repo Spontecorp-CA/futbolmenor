@@ -3,8 +3,6 @@ package com.spontecorp.littleligues.jpacontroller.extentions;
 import com.spontecorp.littleligues.jpacontroller.torneo.FaseJpaController;
 import com.spontecorp.littleligues.model.torneo.Fase;
 import com.spontecorp.littleligues.model.torneo.Fase_;
-import com.spontecorp.littleligues.model.torneo.Grupo;
-import com.spontecorp.littleligues.model.torneo.Grupo_;
 import com.spontecorp.littleligues.model.torneo.Temporada;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,10 +12,7 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Join;
 import javax.persistence.criteria.Root;
-import javax.persistence.metamodel.EntityType;
-import javax.persistence.metamodel.Metamodel;
 
 /**
  *
@@ -46,7 +41,7 @@ public class FaseJpaControllerExt extends FaseJpaController{
 
     private List<Fase> findFaseEntitiesOnTemporada(Temporada temporada, boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
-        List<Fase> fases = new ArrayList<>();
+        List<Fase> fases = new ArrayList<Fase>();
         try {
             CriteriaBuilder cb = em.getCriteriaBuilder();
             CriteriaQuery cq = cb.createQuery();
@@ -66,7 +61,7 @@ public class FaseJpaControllerExt extends FaseJpaController{
     }
     
     public List<Fase> findFaseEntitiesWithGruposOnTemporada(Temporada temporada){
-        List<Fase> fases = new ArrayList<>();
+        List<Fase> fases = new ArrayList<Fase>();
         EntityManager em = getEntityManager();
         try {
             Query q = em.createQuery(
