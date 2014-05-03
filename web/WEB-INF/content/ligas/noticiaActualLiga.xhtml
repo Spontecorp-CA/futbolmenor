@@ -12,7 +12,43 @@
             <div class="post-img">
                 <h:graphicImage url="#{noticiaBean.IMAGE_RETURN}#{ligaBean.noticia.foto}" width="557" height="244"></h:graphicImage>  
             </div>
-            <div class="excerpt">
+            <div class="excerpt" style="marging-top:50px;">
+
+                <script>!function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                        if (!d.getElementById(id)) {
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = p + '://platform.twitter.com/widgets.js';
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }
+                    }(document, 'script', 'twitter-wjs');</script>
+
+                <script>!function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                        if (!d.getElementById(id)) {
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = p + '://platform.twitter.com/widgets.js';
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }
+                    }(document, 'script', 'twitter-wjs');</script>
+
+
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id))
+                            return;
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));</script>
+
+                <div class="fb-like" data-href="http://www.futbolmenor.com" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+                <a href="https://twitter.com/FutbolMenor" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @FutbolMenor</a>             
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.futbolmenor.com" data-text="#{ligaBean.noticia.titulo}" data-via="FutbolMenor" data-dnt="true">Tweet</a>
                 <p>
                     <strong><h:outputText value="#{ligaBean.noticia.pretitulo}"/> </strong>
                     <h:outputText value="#{ligaBean.noticia.cuerpo}" escape="false"/>
