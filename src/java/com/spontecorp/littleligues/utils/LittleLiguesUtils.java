@@ -35,9 +35,14 @@ public class LittleLiguesUtils {
     public static final int STATUS_ACTIVO = 1;
     public static final int STATUS_INACTIVO = 1;
     
-    //RutaProduccion
-    public static final String STORAGE_ROOT = "E:/apache-tomcat-6.0.35/webapps/imagenesfm/";
-    private String IMAGE_RETURN = "http://futbolmenor.dyndns.org:8080/imagenesfm/";
+    //Ruta Produccion Local
+    //public static final String STORAGE_ROOT = "E:/apache-tomcat-6.0.35/webapps/imagenesfm/";
+    //Ruta Produccion mochahost
+    public static final String STORAGE_ROOT = "/home/futbolme/jvm/apache-tomcat-7.0.41/domains/futbolmenor.com/imagenesfm/";
+    // ruta local
+    //private String IMAGE_RETURN = "http://futbolmenor.dyndns.org:8080/imagenesfm/";
+    // ruta mochahost
+    private String IMAGE_RETURN = "http://futbolmenor.com.mocha6001.mochahost.com/imagenesfm/";
     
     //RutaDesarrolloOficina
 //    public static final String STORAGE_ROOT = "C:/apache-tomcat-6.0.35/webapps/imagenesfm/";
